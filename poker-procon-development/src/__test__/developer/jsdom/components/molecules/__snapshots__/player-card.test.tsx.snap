@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerCards スナップショット 1`] = `
+<DocumentFragment>
+  <div
+    class="css-aryzif"
+  >
+    <div
+      class="css-shjrb7"
+    >
+      <img
+        alt="card"
+        class="chakra-image css-0"
+        src="/card/Spades-04.svg"
+      />
+    </div>
+    <div
+      class="css-fni08i"
+    >
+      <img
+        alt="card"
+        class="chakra-image css-0"
+        src="/card/Clubs-09.svg"
+      />
+    </div>
+    <div
+      class="css-1bd1kgk"
+    >
+      <img
+        alt="card"
+        class="chakra-image css-0"
+        src="/card/Spades-10.svg"
+      />
+    </div>
+    <div
+      class="css-2ikapx"
+    >
+      <img
+        alt="card"
+        class="chakra-image css-0"
+        src="/card/Spades-11.svg"
+      />
+    </div>
+    <div
+      class="css-16c4tub"
+    >
+      <img
+        alt="card"
+        class="chakra-image css-0"
+        src="/card/Hearts-12.svg"
+      />
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

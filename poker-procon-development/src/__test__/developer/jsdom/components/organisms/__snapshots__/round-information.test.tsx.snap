@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoundInformation スナップショット 1`] = `
+<DocumentFragment>
+  <div
+    class="css-6ecfnl"
+  >
+    <h2
+      class="chakra-heading css-1e5p3rd"
+    >
+      ゲーム: 1 - ROUND: 1
+    </h2>
+    <hr
+      aria-orientation="horizontal"
+      class="chakra-divider css-o77q2n"
+    />
+    <p
+      class="chakra-text css-1lmmstq"
+    >
+      Phase: Draw1
+    </p>
+    <hr
+      aria-orientation="horizontal"
+      class="chakra-divider css-o77q2n"
+    />
+    <div
+      class="css-32lg8u"
+    >
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        Pot: 10,000pt
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        (Min bet: 2,500pt)
+      </p>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentHand スナップショット/カード未所持 1`] = `
+<DocumentFragment>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`CurrentHand スナップショット/交換あり 1`] = `
+<DocumentFragment>
+  <div
+    class="css-z165it"
+  >
+    <p
+      class="chakra-text css-1876eo0"
+    >
+      One Pair → Three of a Kind
+    </p>
+    <img
+      alt="bubble"
+      class="chakra-image css-13pr30p"
+      src="/bubble.svg"
+    />
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`CurrentHand スナップショット/交換なし 1`] = `
+<DocumentFragment>
+  <div
+    class="css-z165it"
+  >
+    <p
+      class="chakra-text css-1876eo0"
+    >
+      Three of a Kind
+    </p>
+    <img
+      alt="bubble"
+      class="chakra-image css-13pr30p"
+      src="/bubble.svg"
+    />
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`CurrentHand スナップショット/終了フェーズ 1`] = `
+<DocumentFragment>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

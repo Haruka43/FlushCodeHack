@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameStepper スナップショット/1ページ目 1`] = `
+<DocumentFragment>
+  <div
+    class="css-hre5bs"
+  >
+    <button
+      aria-label="Prev"
+      class="chakra-button css-13s0th2"
+      disabled=""
+      type="button"
+    >
+      <span
+        class="chakra-button__icon css-1wh2kri"
+      >
+        <svg
+          aria-hidden="true"
+          class="chakra-icon css-onkibi"
+          focusable="false"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      Prev
+    </button>
+    <div
+      class="chakra-numberinput css-1j8xgar"
+      value="1"
+    >
+      <input
+        aria-label="pager"
+        aria-valuemax="10"
+        aria-valuemin="1"
+        aria-valuenow="1"
+        aria-valuetext="1"
+        autocomplete="off"
+        autocorrect="off"
+        class="chakra-numberinput__field css-skouzv"
+        inputmode="decimal"
+        pattern="[0-9]*(.[0-9]+)?"
+        role="spinbutton"
+        type="text"
+        value="1"
+      />
+      <div
+        aria-hidden="true"
+        class="css-1jj9yua"
+      >
+        <div
+          class="css-1m5jnul"
+          role="button"
+          tabindex="-1"
+        >
+          <svg
+            class="chakra-icon css-onkibi"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.8,5.4c-0.377-0.504-1.223-0.504-1.6,0l-9,12c-0.228,0.303-0.264,0.708-0.095,1.047 C2.275,18.786,2.621,19,3,19h18c0.379,0,0.725-0.214,0.895-0.553c0.169-0.339,0.133-0.744-0.095-1.047L12.8,5.4z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <div
+          aria-disabled="true"
+          class="css-1m5jnul"
+          disabled=""
+          role="button"
+          tabindex="-1"
+        >
+          <svg
+            class="chakra-icon css-onkibi"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <p
+      class="chakra-text css-paz7wr"
+    >
+      /
+    </p>
+    <p
+      class="chakra-text css-paz7wr"
+    >
+      10
+    </p>
+    <button
+      aria-label="Next"
+      class="chakra-button css-13s0th2"
+      type="button"
+    >
+      Next
+      <span
+        class="chakra-button__icon css-1hzyiq5"
+      >
+        <svg
+          aria-hidden="true"
+          class="chakra-icon css-onkibi"
+          focusable="false"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`GameStepper スナップショット/最終ページ 1`] = `
+<DocumentFragment>
+  <div
+    class="css-hre5bs"
+  >
+    <button
+      aria-label="Prev"
+      class="chakra-button css-13s0th2"
+      type="button"
+    >
+      <span
+        class="chakra-button__icon css-1wh2kri"
+      >
+        <svg
+          aria-hidden="true"
+          class="chakra-icon css-onkibi"
+          focusable="false"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      Prev
+    </button>
+    <div
+      class="chakra-numberinput css-1j8xgar"
+      value="10"
+    >
+      <input
+        aria-label="pager"
+        aria-valuemax="10"
+        aria-valuemin="1"
+        aria-valuenow="10"
+        aria-valuetext="10"
+        autocomplete="off"
+        autocorrect="off"
+        class="chakra-numberinput__field css-skouzv"
+        inputmode="decimal"
+        pattern="[0-9]*(.[0-9]+)?"
+        role="spinbutton"
+        type="text"
+        value="10"
+      />
+      <div
+        aria-hidden="true"
+        class="css-1jj9yua"
+      >
+        <div
+          aria-disabled="true"
+          class="css-1m5jnul"
+          disabled=""
+          role="button"
+          tabindex="-1"
+        >
+          <svg
+            class="chakra-icon css-onkibi"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.8,5.4c-0.377-0.504-1.223-0.504-1.6,0l-9,12c-0.228,0.303-0.264,0.708-0.095,1.047 C2.275,18.786,2.621,19,3,19h18c0.379,0,0.725-0.214,0.895-0.553c0.169-0.339,0.133-0.744-0.095-1.047L12.8,5.4z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <div
+          class="css-1m5jnul"
+          role="button"
+          tabindex="-1"
+        >
+          <svg
+            class="chakra-icon css-onkibi"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <p
+      class="chakra-text css-paz7wr"
+    >
+      /
+    </p>
+    <p
+      class="chakra-text css-paz7wr"
+    >
+      10
+    </p>
+    <button
+      aria-label="Next"
+      class="chakra-button css-13s0th2"
+      disabled=""
+      type="button"
+    >
+      Next
+      <span
+        class="chakra-button__icon css-1hzyiq5"
+      >
+        <svg
+          aria-hidden="true"
+          class="chakra-icon css-onkibi"
+          focusable="false"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

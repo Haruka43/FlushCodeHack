@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox スナップショット/default 1`] = `
+<DocumentFragment>
+  <label
+    class="chakra-checkbox css-ctlur2"
+  >
+    <input
+      class="chakra-checkbox__input"
+      style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+      type="checkbox"
+      value=""
+    />
+    <span
+      aria-hidden="true"
+      class="chakra-checkbox__control css-1ydjfm6"
+    />
+    <span
+      class="chakra-checkbox__label css-6x44c9"
+    >
+      Player1
+    </span>
+  </label>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

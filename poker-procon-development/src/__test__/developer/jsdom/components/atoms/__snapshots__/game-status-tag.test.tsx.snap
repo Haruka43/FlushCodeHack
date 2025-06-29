@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameStatusTag スナップショット/new 1`] = `
+<DocumentFragment>
+  <span
+    class="css-y9e69r"
+  >
+    新規
+  </span>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`GameStatusTag スナップショット/new 2`] = `
+<DocumentFragment>
+  <span
+    class="css-1v5fpkt"
+  >
+    進行中
+  </span>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`GameStatusTag スナップショット/new 3`] = `
+<DocumentFragment>
+  <span
+    class="css-b5iegr"
+  >
+    終了
+  </span>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

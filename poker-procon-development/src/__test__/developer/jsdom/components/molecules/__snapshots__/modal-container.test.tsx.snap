@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalContainer スナップショット 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    class="chakra-modal__overlay css-hdd9l7"
+    data-aria-hidden="true"
+    style="opacity: 0;"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+  <div
+    data-focus-lock-disabled="false"
+  >
+    <div
+      class="chakra-modal__content-container css-1u2cvaz"
+      tabindex="-1"
+    >
+      <section
+        aria-describedby="chakra-modal--body-:r0:"
+        aria-labelledby="chakra-modal--header-:r0:"
+        aria-modal="true"
+        class="chakra-modal__content css-pv22qu"
+        id="chakra-modal-:r0:"
+        role="dialog"
+        style="opacity: 0; transform: scale(0.95) translateZ(0);"
+        tabindex="-1"
+      >
+        <header
+          class="chakra-modal__header css-9fgtzh"
+          id="chakra-modal--header-:r0:"
+        >
+          モーダル
+        </header>
+        <button
+          aria-label="Close"
+          class="chakra-modal__close-btn css-1ik4h6n"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="chakra-icon css-onkibi"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <div
+          class="chakra-modal__body css-qlig70"
+          id="chakra-modal--body-:r0:"
+        >
+          モーダルコンテンツ
+        </div>
+        <footer
+          class="chakra-modal__footer css-k0waxj"
+        >
+          <div
+            class="css-1vakbk4"
+          >
+            <button
+              class="chakra-button css-11494p6"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="chakra-button css-41aesz"
+              type="button"
+            >
+              Submit
+            </button>
+          </div>
+        </footer>
+      </section>
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+  <div
+    aria-label="Notifications-top"
+    aria-live="polite"
+    id="chakra-toast-manager-top"
+    role="region"
+    style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+  />
+  <div
+    aria-label="Notifications-top-left"
+    aria-live="polite"
+    id="chakra-toast-manager-top-left"
+    role="region"
+    style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+  />
+  <div
+    aria-label="Notifications-top-right"
+    aria-live="polite"
+    id="chakra-toast-manager-top-right"
+    role="region"
+    style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+  />
+  <div
+    aria-label="Notifications-bottom-left"
+    aria-live="polite"
+    id="chakra-toast-manager-bottom-left"
+    role="region"
+    style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+  />
+  <div
+    aria-label="Notifications-bottom"
+    aria-live="polite"
+    id="chakra-toast-manager-bottom"
+    role="region"
+    style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+  />
+  <div
+    aria-label="Notifications-bottom-right"
+    aria-live="polite"
+    id="chakra-toast-manager-bottom-right"
+    role="region"
+    style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"
+  />
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

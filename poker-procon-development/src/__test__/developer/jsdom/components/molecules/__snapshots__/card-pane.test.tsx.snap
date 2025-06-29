@@ -1,0 +1,254 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardPanel スナップショット/default 1`] = `
+<DocumentFragment>
+  <div
+    class="css-vxlbt5"
+  >
+    <div
+      class="css-u8yv6t"
+    >
+      <p
+        class="chakra-text css-bq8qtg"
+      >
+        1
+      </p>
+      <div
+        class="css-14d7ov9"
+      >
+        <svg
+          fill="none"
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 35.005L34.2046 20.2998C37.9318 16.5725 37.9318 10.5227 34.2046 6.79546C30.4775 3.06818 24.428 3.06818 20.7008 6.79546L19.5 7.99635L18.2992 6.79546C14.572 3.06818 8.5225 3.06818 4.79536 6.79546C1.06821 10.5227 1.06821 16.5725 4.79536 20.2998L19.5 35.005Z"
+            fill="#B4171E"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="css-ocrfjm"
+    >
+      <p
+        class="chakra-text css-bq8qtg"
+      >
+        1
+      </p>
+      <div
+        class="css-14d7ov9"
+      >
+        <svg
+          fill="none"
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 35.005L34.2046 20.2998C37.9318 16.5725 37.9318 10.5227 34.2046 6.79546C30.4775 3.06818 24.428 3.06818 20.7008 6.79546L19.5 7.99635L18.2992 6.79546C14.572 3.06818 8.5225 3.06818 4.79536 6.79546C1.06821 10.5227 1.06821 16.5725 4.79536 20.2998L19.5 35.005Z"
+            fill="#B4171E"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`CardPanel スナップショット/link 1`] = `
+<DocumentFragment>
+  <a
+    class="css-3lw21s"
+    href="/"
+  >
+    <div
+      class="css-u8yv6t"
+    >
+      <p
+        class="chakra-text css-bq8qtg"
+      >
+        1
+      </p>
+      <div
+        class="css-14d7ov9"
+      >
+        <svg
+          fill="none"
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 35.005L34.2046 20.2998C37.9318 16.5725 37.9318 10.5227 34.2046 6.79546C30.4775 3.06818 24.428 3.06818 20.7008 6.79546L19.5 7.99635L18.2992 6.79546C14.572 3.06818 8.5225 3.06818 4.79536 6.79546C1.06821 10.5227 1.06821 16.5725 4.79536 20.2998L19.5 35.005Z"
+            fill="#B4171E"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="css-ocrfjm"
+    >
+      <p
+        class="chakra-text css-bq8qtg"
+      >
+        1
+      </p>
+      <div
+        class="css-14d7ov9"
+      >
+        <svg
+          fill="none"
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 35.005L34.2046 20.2998C37.9318 16.5725 37.9318 10.5227 34.2046 6.79546C30.4775 3.06818 24.428 3.06818 20.7008 6.79546L19.5 7.99635L18.2992 6.79546C14.572 3.06818 8.5225 3.06818 4.79536 6.79546C1.06821 10.5227 1.06821 16.5725 4.79536 20.2998L19.5 35.005Z"
+            fill="#B4171E"
+          />
+        </svg>
+      </div>
+    </div>
+  </a>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`CardPanel スナップショット/md 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1qxjl2e"
+  >
+    <div
+      class="css-gh5eqk"
+    >
+      <p
+        class="chakra-text css-11xd71r"
+      >
+        1
+      </p>
+      <div
+        class="css-1ia5mzk"
+      >
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 40 40"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 35.005L34.2046 20.2998C37.9318 16.5725 37.9318 10.5227 34.2046 6.79546C30.4775 3.06818 24.428 3.06818 20.7008 6.79546L19.5 7.99635L18.2992 6.79546C14.572 3.06818 8.5225 3.06818 4.79536 6.79546C1.06821 10.5227 1.06821 16.5725 4.79536 20.2998L19.5 35.005Z"
+            fill="#B4171E"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="css-pgpbif"
+    >
+      <p
+        class="chakra-text css-11xd71r"
+      >
+        1
+      </p>
+      <div
+        class="css-1ia5mzk"
+      >
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 40 40"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 35.005L34.2046 20.2998C37.9318 16.5725 37.9318 10.5227 34.2046 6.79546C30.4775 3.06818 24.428 3.06818 20.7008 6.79546L19.5 7.99635L18.2992 6.79546C14.572 3.06818 8.5225 3.06818 4.79536 6.79546C1.06821 10.5227 1.06821 16.5725 4.79536 20.2998L19.5 35.005Z"
+            fill="#B4171E"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`CardPanel スナップショット/md 2`] = `
+<DocumentFragment>
+  <div
+    class="css-vxlbt5"
+  >
+    <div
+      class="css-u8yv6t"
+    >
+      <p
+        class="chakra-text css-bq8qtg"
+      >
+        1
+      </p>
+      <div
+        class="css-14d7ov9"
+      >
+        <svg
+          fill="none"
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 35.005L34.2046 20.2998C37.9318 16.5725 37.9318 10.5227 34.2046 6.79546C30.4775 3.06818 24.428 3.06818 20.7008 6.79546L19.5 7.99635L18.2992 6.79546C14.572 3.06818 8.5225 3.06818 4.79536 6.79546C1.06821 10.5227 1.06821 16.5725 4.79536 20.2998L19.5 35.005Z"
+            fill="#B4171E"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="css-ocrfjm"
+    >
+      <p
+        class="chakra-text css-bq8qtg"
+      >
+        1
+      </p>
+      <div
+        class="css-14d7ov9"
+      >
+        <svg
+          fill="none"
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 35.005L34.2046 20.2998C37.9318 16.5725 37.9318 10.5227 34.2046 6.79546C30.4775 3.06818 24.428 3.06818 20.7008 6.79546L19.5 7.99635L18.2992 6.79546C14.572 3.06818 8.5225 3.06818 4.79536 6.79546C1.06821 10.5227 1.06821 16.5725 4.79536 20.2998L19.5 35.005Z"
+            fill="#B4171E"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionLabel スナップショット/all-in 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-1batzyk"
+    >
+      All-in
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`ActionLabel スナップショット/bet 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-w1ydsw"
+    >
+      Bet +100pt
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`ActionLabel スナップショット/call 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-9ylyiq"
+    >
+      Call
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`ActionLabel スナップショット/check 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-9ylyiq"
+    >
+      Check
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`ActionLabel スナップショット/drop 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-1y05cao"
+    >
+      Drop
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`ActionLabel スナップショット/exchange 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-8eqocq"
+    >
+      Exhcange 2 cards
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`ActionLabel スナップショット/out 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-1y05cao"
+    >
+      Out
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`ActionLabel スナップショット/raise 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-w1ydsw"
+    >
+      Raise +100pt
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

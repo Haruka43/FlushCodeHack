@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllInTag スナップショット 1`] = `
+<DocumentFragment>
+  <span
+    class="css-y9e69r"
+  >
+    ALL-IN
+  </span>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

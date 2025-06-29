@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommonTemplate スナップショット/default 1`] = `
+<DocumentFragment>
+  <div
+    class="css-15sgrpm"
+  >
+    <div
+      class="css-1ir58rf"
+    >
+      <a
+        href="/"
+      >
+        <h1
+          class="chakra-heading css-zwnc2m"
+        >
+          Flush Code Hack
+        </h1>
+      </a>
+    </div>
+    <div
+      class="css-rctxai"
+    >
+      <div
+        class="css-ifigsn"
+      />
+    </div>
+    <div
+      class="css-1phanch"
+    >
+      <p
+        class="chakra-text css-bmni1x"
+      >
+        © Benesse i-Career Co., Ltd. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CommonTemplate スナップショット/loading 1`] = `
+<DocumentFragment>
+  <div
+    class="css-15sgrpm"
+  >
+    <div
+      class="css-wty2ul"
+    >
+      <div
+        class="chakra-spinner css-18kddkt"
+      >
+        <span
+          class="css-8b45rq"
+        >
+          loading
+        </span>
+      </div>
+      <p
+        class="chakra-text css-8s549p"
+      >
+        読み込み中...
+      </p>
+    </div>
+    <div
+      class="css-1ir58rf"
+    >
+      <a
+        href="/"
+      >
+        <h1
+          class="chakra-heading css-zwnc2m"
+        >
+          Flush Code Hack
+        </h1>
+      </a>
+    </div>
+    <div
+      class="css-rctxai"
+    >
+      <div
+        class="css-ifigsn"
+      />
+    </div>
+    <div
+      class="css-1phanch"
+    >
+      <p
+        class="chakra-text css-bmni1x"
+      >
+        © Benesse i-Career Co., Ltd. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

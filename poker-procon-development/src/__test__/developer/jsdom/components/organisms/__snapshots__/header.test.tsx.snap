@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header スナップショット 1`] = `
+<DocumentFragment>
+  <div
+    class="css-ndknwh"
+  >
+    <a
+      href="/"
+    >
+      <h1
+        class="chakra-heading css-1e1x6p7"
+      >
+        Flush Code Hack
+      </h1>
+    </a>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

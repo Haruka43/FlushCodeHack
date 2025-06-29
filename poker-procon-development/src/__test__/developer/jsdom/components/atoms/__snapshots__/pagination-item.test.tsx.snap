@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationItem スナップショット/first - active 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="first"
+    class="chakra-button css-mudq2d"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="chakra-icon css-u3gylf"
+      focusable="false"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+        fill-rule="evenodd"
+      />
+      <path
+        d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`PaginationItem スナップショット/first - not active 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="first"
+    class="chakra-button css-mudq2d"
+    disabled=""
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="chakra-icon css-129ongp"
+      focusable="false"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+        fill-rule="evenodd"
+      />
+      <path
+        d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`PaginationItem スナップショット/last = active 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="last"
+    class="chakra-button css-mudq2d"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="chakra-icon css-u3gylf"
+      focusable="false"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"
+        fill-rule="evenodd"
+      />
+      <path
+        d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`PaginationItem スナップショット/last - not active 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="last"
+    class="chakra-button css-mudq2d"
+    disabled=""
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="chakra-icon css-129ongp"
+      focusable="false"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"
+        fill-rule="evenodd"
+      />
+      <path
+        d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`PaginationItem スナップショット/next 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="next"
+    class="chakra-button css-mudq2d"
+    disabled=""
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="chakra-icon css-onkibi"
+      focusable="false"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`PaginationItem スナップショット/number - non active 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="number-1"
+    class="chakra-button css-1dkcmnq"
+    disabled=""
+    type="button"
+  >
+    1
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`PaginationItem スナップショット/number active 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="number-1"
+    class="chakra-button css-1dkcmnq"
+    type="button"
+  >
+    1
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`PaginationItem スナップショット/number current 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="number-1"
+    class="chakra-button css-1ol6zar"
+    type="button"
+  >
+    1
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`PaginationItem スナップショット/prev 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="prev"
+    class="chakra-button css-mudq2d"
+    disabled=""
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="chakra-icon css-onkibi"
+      focusable="false"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

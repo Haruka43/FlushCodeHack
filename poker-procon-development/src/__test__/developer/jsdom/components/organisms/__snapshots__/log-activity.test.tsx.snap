@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameInformation スナップショット/bet - 加算あり 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1ec8zan"
+  >
+    <div
+      class="css-1pjqcpo"
+    >
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        Pot:
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        600pt
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        →
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        914pt
+      </p>
+    </div>
+    <div
+      class="css-1pjqcpo"
+    >
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        Min bet point:
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        0pt
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        →
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        314pt
+      </p>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`GameInformation スナップショット/bet - 加算なし 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1ec8zan"
+  >
+    <div
+      class="css-1pjqcpo"
+    >
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        Pot:
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        600pt
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        →
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        600pt
+      </p>
+    </div>
+    <div
+      class="css-1pjqcpo"
+    >
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        Min bet point:
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        0pt
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        →
+      </p>
+      <p
+        class="chakra-text css-tb8v7v"
+      >
+        0pt
+      </p>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`GameInformation スナップショット/draw - 交換あり 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1ec8zan"
+  >
+    <div
+      class="css-fl2o3k"
+    >
+      <div
+        class="css-k3kwl"
+      >
+        <img
+          alt="card"
+          class="chakra-image css-1sx3zwc"
+          src="/card/Clubs-06.svg"
+        />
+      </div>
+      <p
+        class="chakra-text css-1fqgk32"
+      >
+        ↓
+      </p>
+      <div
+        class="css-k3kwl"
+      >
+        <img
+          alt="card"
+          class="chakra-image css-1nhackf"
+          src="/card/Hearts-01.svg"
+        />
+      </div>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`GameInformation スナップショット/draw - 交換なし 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1ec8zan"
+  >
+    <p
+      class="chakra-text css-tb8v7v"
+    >
+      No change.
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

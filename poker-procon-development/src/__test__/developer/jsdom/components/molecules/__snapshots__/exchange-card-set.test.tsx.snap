@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExchangeCardSet スナップショット/交換したカード 1`] = `
+<DocumentFragment>
+  <div
+    class="css-k3kwl"
+  >
+    <img
+      alt="card"
+      class="chakra-image css-1nhackf"
+      src="/card/Clubs-05.svg"
+    />
+    <img
+      alt="card"
+      class="chakra-image css-1nhackf"
+      src="/card/Clubs-06.svg"
+    />
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`ExchangeCardSet スナップショット/新しいカード 1`] = `
+<DocumentFragment>
+  <div
+    class="css-k3kwl"
+  >
+    <img
+      alt="card"
+      class="chakra-image css-1sx3zwc"
+      src="/card/Diamonds-01.svg"
+    />
+    <img
+      alt="card"
+      class="chakra-image css-1sx3zwc"
+      src="/card/Spades-01.svg"
+    />
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HandLabel スナップショット/強調あり 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-8eqocq"
+    >
+      Royal Straight Flush
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`HandLabel スナップショット/強調なし 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-iihebi"
+    >
+      Royal Straight Flush
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
+
+exports[`HandLabel スナップショット/非活性 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12qsq9i"
+  >
+    <p
+      class="chakra-text css-1y05cao"
+    >
+      Drop
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;

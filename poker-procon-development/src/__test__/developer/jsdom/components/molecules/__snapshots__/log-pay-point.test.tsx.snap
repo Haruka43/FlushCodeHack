@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogPayPoint スナップショット 1`] = `
+<DocumentFragment>
+  <div
+    class="css-7kwrtp"
+  >
+    <div
+      class="css-dvxtzn"
+    >
+      <p
+        class="chakra-text css-1ycuhuu"
+      >
+        fee
+      </p>
+      <p
+        class="chakra-text css-1hlceuq"
+      >
+        200
+      </p>
+    </div>
+    <p
+      class="chakra-text css-1hlceuq"
+    >
+      +
+    </p>
+    <div
+      class="css-dvxtzn"
+    >
+      <p
+        class="chakra-text css-1ycuhuu"
+      >
+        1st bet
+      </p>
+      <p
+        class="chakra-text css-1hlceuq"
+      >
+        100
+      </p>
+    </div>
+    <p
+      class="chakra-text css-1hlceuq"
+    >
+      +
+    </p>
+    <div
+      class="css-dvxtzn"
+    >
+      <p
+        class="chakra-text css-1ycuhuu"
+      >
+        2nd bet
+      </p>
+      <p
+        class="chakra-text css-1hlceuq"
+      >
+        0
+      </p>
+    </div>
+    <p
+      class="chakra-text css-1hlceuq"
+    >
+      =
+    </p>
+    <div
+      class="css-dvxtzn"
+    >
+      <p
+        class="chakra-text css-1ycuhuu"
+      >
+        total
+      </p>
+      <p
+        class="chakra-text css-1hlceuq"
+      >
+        300
+      </p>
+    </div>
+    <p
+      class="chakra-text css-1hlceuq"
+    >
+      pt
+    </p>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</DocumentFragment>
+`;
