@@ -79,7 +79,7 @@ const cards = [
 ];
 
 describe('/demo-player-js service', () => {
-  const player = new Players.team2('1', 'team2');
+  const player = new Players.Team2('1', 'team2');
 
   test('start function', () => {
     player.start(PlayerTestGameData);

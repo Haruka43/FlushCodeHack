@@ -7,6 +7,7 @@ class JsPlayer {
   name; // プレイヤー名
   round; // ラウンド
   win; // 勝数
+  betUnit; // テストで必要なベット単位
 
   constructor(id, name) {
     this.logger = getLogger({ group: 'player', gameId: id, playerName: name });
@@ -14,6 +15,7 @@ class JsPlayer {
     this.name = name;
     this.round = 0;
     this.win = 0;
+    this.betUnit = 0; // betUnitを初期化
 
     this.logger?.info(`Start game. ID: ${this.id}`);
   }
@@ -70,7 +72,6 @@ class JsPlayer {
     else if (countsValues[0] === 2) score = 100; // ワンペア
 
     // 役が同じ場合の強さを決めるため、カードランクでスコアを補正
-    // 例：AAK53 は AAK42 より強い
     const tieBreaker = ranks
       .map((r) => String(r).padStart(2, '0'))
       .reverse()
@@ -126,7 +127,6 @@ class JsPlayer {
     }
 
     // 上記以外（ハイカードやドローを狙う手）
-    // とりあえず一番強いカード1枚を残して4枚交換する戦略
     const ranks = cards.map(toRank);
     const maxRank = Math.max(...ranks);
     let kept = false;
@@ -143,78 +143,47 @@ class JsPlayer {
   // ▼▼▼ 変更可能なメイン関数 ▼▼▼
   // =================================================================
 
-  /**
-   * ラウンド開始時に行う処理
-   * @param {object} data GameInfo
-   */
   startRound(data) {
     this.round = data.currentRound;
     this.logger?.info(this.formattedLog('Round start.'));
-
-    Object.values(data.players).forEach((player) => {
-      this.logger?.debug(
-        this.formattedLog(`StartRound. ${player.name} info. status: ${player.status}, point: ${player.point}`)
-      );
-    });
   }
 
-  /**
-   * ベットするポイントを決定する
-   * @param {object} data GameInfo
-   * @returns {number} 追加で賭けるポイント数
-   */
   decideBetPoint(data) {
     const self = data.players[this.name];
-    if (!self) return -1; // 万が一自身が見つからなければドロップ
+    if (!self) return -1;
 
     const myHandStrength = this.evaluateHand(self.round.cards);
     this.logger?.info(
       this.formattedLog(`My hand: ${JSON.stringify(self.round.cards)}, Strength: ${myHandStrength.toFixed(2)}`)
     );
 
-    const diff = data.minBetPoint - (self.round.betPoint ?? 0); // コールに必要な額
-    const stack = self.point - diff; // コールした後に自由に使えるポイント
+    const diff = data.minBetPoint - (self.round.betPoint ?? 0);
+    const stack = self.point - diff;
 
-    // 強い手 (ツーペア以上) の場合
     if (myHandStrength >= 200) {
-      // 誰もベットしていないなら、ポットの半分くらいをベット
       if (data.minBetPoint === 0) {
         return Math.floor(data.pot * 0.5);
       }
-      // 誰かがベットしているなら、強気にレイズ
-      // レイズ額は最低ベット額の2倍程度
       const raiseAmount = data.minBetPoint * 2;
-      return Math.min(stack, raiseAmount); // 所持ポイントを超えないように
+      return Math.min(stack, raiseAmount);
     }
 
-    // 中くらいの手 (ワンペア) の場合
     if (myHandStrength >= 100) {
-      // 相手のベット額が大きすぎる (ポットの半分以上) ならドロップ
       if (data.minBetPoint > data.pot * 0.5) {
         return -1;
       }
-      // それ以外はコールに留める
       return 0;
     }
 
-    // 弱い手 (ハイカード) の場合
-    // 誰もベットしていなければチェック
     if (data.minBetPoint === 0) {
       return 0;
     }
-    // 誰かがベットしていて、コール額が少額 (ポットの10%未満) なら運試しでコール
     if (diff < data.pot * 0.1) {
       return 0;
     }
-    // それ以外は潔くドロップ
     return -1;
   }
 
-  /**
-   * 交換する手札を選択する
-   * @param {object} data GameInfo
-   * @returns {Array<boolean>}
-   */
   drawCard(data) {
     const self = data.players[this.name];
     const cards = self?.round.cards ?? [];
@@ -233,10 +202,6 @@ class JsPlayer {
     return drawDecision;
   }
 
-  /**
-   * ラウンド終了時に行う処理
-   * @param {object} data GameInfo
-   */
   endRound(data) {
     this.logger?.info(this.formattedLog(`Round end. winner: ${data.winner}`));
 
@@ -271,7 +236,8 @@ class JsPlayer {
       id: this.id,
       name: this.name,
       round: this.round,
-      win: this.win
+      win: this.win,
+      betUnit: this.betUnit // betUnitを返す
     };
   }
 }

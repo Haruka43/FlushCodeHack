@@ -1,7 +1,7 @@
 import JsPlayer from './demo-player-js'; // 変更禁止
 import TsPlayer from './demo-player-ts'; // 変更禁止
 // ↓作成したプレイヤープログラムをimportしてください。
-// import Team1 from './player'; // sample
+import Team2 from './team2'; // sample
 // ↑作成したプレイヤープログラムをimportしてください。
 
 const Players: {
@@ -14,7 +14,7 @@ const Players: {
 
   // ↓作成したプレイヤープログラムを定義してください。
   // Team1, // sample
-  Team2: JsPlayer, // sample
+  Team2: JsPlayer // sample
   // ↑作成したプレイヤープログラムを定義してください。
 };
 
