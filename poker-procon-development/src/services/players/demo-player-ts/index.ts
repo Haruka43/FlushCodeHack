@@ -51,9 +51,7 @@ class TsPlayer {
     // 各プレイヤーの情報をログに出力する
     Object.values(data.players).forEach((player) => {
       this.logger?.debug(
-        this.formattedLog(
-          `Round start. ${player.name} info. status: ${player.status}, point: ${player.point}`
-        )
+        this.formattedLog(`Round start. ${player.name} info. status: ${player.status}, point: ${player.point}`)
       );
     });
 
@@ -67,18 +65,12 @@ class TsPlayer {
    * @returns
    */
   private decideBetPoint(data: GameInfo): number {
-    this.logger?.info(
-      this.formattedLog(
-        `Phase ${data.phase}. pot: ${data.pot}, minBetPoint: ${data.minBetPoint}`
-      )
-    );
+    this.logger?.info(this.formattedLog(`Phase ${data.phase}. pot: ${data.pot}, minBetPoint: ${data.minBetPoint}`));
 
     // 各プレイヤーの情報をログに出力する
     Object.values(data.players).forEach((player) => {
       this.logger?.debug(
-        this.formattedLog(
-          `${player.name} info. point: ${player.point}, betPoint: ${player.round.betPoint}`
-        )
+        this.formattedLog(`${player.name} info. point: ${player.point}, betPoint: ${player.round.betPoint}`)
       );
     });
 
@@ -87,11 +79,7 @@ class TsPlayer {
 
     const self = data.players[this.name]; // 自身のデータ
     const diff = data.minBetPoint - (self?.round.betPoint ?? 0); // 現在の最低賭けポイントと既に賭けたポイントとの差額
-    this.logger?.info(
-      this.formattedLog(
-        `my cards: ${JSON.stringify(self?.round.cards)}, diff: ${diff}`
-      )
-    );
+    this.logger?.info(this.formattedLog(`my cards: ${JSON.stringify(self?.round.cards)}, diff: ${diff}`));
 
     const point = self?.point ?? 0; // 所持ポイント
     const stack = point - diff; // 自由に使用できるポイント
@@ -123,18 +111,14 @@ class TsPlayer {
   private drawCard(data: GameInfo): boolean[] {
     const self = data.players[this.name]; // 自身のデータ
     const cards = self?.round.cards ?? [];
-    this.logger?.info(
-      this.formattedLog(
-        `phase: ${data.phase}. my cards: ${JSON.stringify(cards)}`
-      )
-    );
+    this.logger?.info(this.formattedLog(`phase: ${data.phase}. my cards: ${JSON.stringify(cards)}`));
 
     return [
       randomByNumber(2) < 1,
       randomByNumber(2) < 1,
       randomByNumber(2) < 1,
       randomByNumber(2) < 1,
-      randomByNumber(2) < 1,
+      randomByNumber(2) < 1
     ];
   }
 
@@ -144,22 +128,14 @@ class TsPlayer {
    * @returns
    */
   private endRound(data: GameInfo): void {
-    this.logger?.info(
-      this.formattedLog(
-        `${data.currentRound}>: Round end. winner: ${data.winner}`
-      )
-    );
+    this.logger?.info(this.formattedLog(`${data.currentRound}>: Round end. winner: ${data.winner}`));
 
     // 各プレイヤーの情報をログに出力する
     Object.values(data.players).forEach((player) => {
       this.logger?.debug(
-        `<Round: ${data.currentRound}>: Round end. ${
-          player.name
-        } info. status: ${player.status}, point: ${
+        `<Round: ${data.currentRound}>: Round end. ${player.name} info. status: ${player.status}, point: ${
           player.point
-        }}, cards: ${JSON.stringify(player.round.cards)}, hand: ${
-          player.round.hand
-        }`
+        }}, cards: ${JSON.stringify(player.round.cards)}, hand: ${player.round.hand}`
       );
     });
 
@@ -248,7 +224,7 @@ class TsPlayer {
       name: this.name,
       round: this.round,
       betUnit: this.betUnit,
-      win: this.win,
+      win: this.win
     };
   }
 }

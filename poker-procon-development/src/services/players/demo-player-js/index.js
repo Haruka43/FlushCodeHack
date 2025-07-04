@@ -3,15 +3,9 @@ import { randomByNumber } from '@/utils/game.ts';
 
 class JsPlayer {
   logger; // player logger
-
   id; // ゲームID
-
   name; // プレイヤー名
-
   round; // ラウンド
-
-  betUnit; // 賭けポイントを追加する単位
-
   win; // 勝数
 
   constructor(id, name) {
@@ -19,10 +13,8 @@ class JsPlayer {
     this.id = id;
     this.name = name;
     this.round = 0;
-    this.betUnit = 0;
     this.win = 0;
 
-    // 以下、ゲーム参加時の処理
     this.logger?.info(`Start game. ID: ${this.id}`);
   }
 
@@ -35,211 +27,251 @@ class JsPlayer {
     return `<Round: ${this.round}>: ${text}`;
   }
 
+  // =================================================================
+  // ▼▼▼ 戦略ロジック ▼▼▼
+  // =================================================================
+
+  /**
+   * 手札を評価し、強さを数値で返す関数 (役が強いほど高得点)
+   * @param {Array<object>} cards 手札のカード [{ suit: 'Hearts', number: 1 }]
+   * @returns {number} 手札の評価値
+   */
+  evaluateHand(cards) {
+    if (!cards || cards.length !== 5) return 0;
+
+    // number (1-13) をランク (2-14) に変換 (1=Ace=14)
+    const toRank = (card) => (card.number === 1 ? 14 : card.number);
+    const ranks = cards.map(toRank).sort((a, b) => a - b);
+    const suits = cards.map((card) => card.suit);
+
+    const isFlush = suits.every((s) => s === suits[0]);
+    // A-5ストレート (A,2,3,4,5) の特殊判定
+    const isA5Straight = JSON.stringify(ranks) === JSON.stringify([2, 3, 4, 5, 14]);
+    const isNormalStraight = ranks.every((rank, i) => i === 0 || rank === ranks[i - 1] + 1);
+    const isStraight = isNormalStraight || isA5Straight;
+
+    // ランクごとの枚数をカウント
+    const counts = ranks.reduce((acc, rank) => {
+      acc[rank] = (acc[rank] || 0) + 1;
+      return acc;
+    }, {});
+    const countsValues = Object.values(counts).sort((a, b) => b - a);
+
+    let score = 0;
+    // 役に応じて基本スコアを決定
+    if (isStraight && isFlush && ranks.includes(14) && ranks.includes(13)) score = 900; // ロイヤルストレートフラッシュ
+    else if (isStraight && isFlush) score = 800; // ストレートフラッシュ
+    else if (countsValues[0] === 4) score = 700; // フォーカード
+    else if (countsValues[0] === 3 && countsValues[1] === 2) score = 600; // フルハウス
+    else if (isFlush) score = 500; // フラッシュ
+    else if (isStraight) score = 400; // ストレート
+    else if (countsValues[0] === 3) score = 300; // スリーカード
+    else if (countsValues[0] === 2 && countsValues[1] === 2) score = 200; // ツーペア
+    else if (countsValues[0] === 2) score = 100; // ワンペア
+
+    // 役が同じ場合の強さを決めるため、カードランクでスコアを補正
+    // 例：AAK53 は AAK42 より強い
+    const tieBreaker = ranks
+      .map((r) => String(r).padStart(2, '0'))
+      .reverse()
+      .join('');
+    return score + parseFloat(`0.${tieBreaker}`);
+  }
+
+  /**
+   * 手札と役の評価値に基づいて、交換するカードを決める
+   * @param {Array<object>} cards 手札
+   * @param {number} handStrength 手札の評価値
+   * @returns {Array<boolean>} 交換するカード(true)としないカード(false)の配列
+   */
+  decideDraw(cards, handStrength) {
+    // 役がストレート以上またはフルハウスの場合は交換しない
+    if (handStrength >= 400) {
+      return [false, false, false, false, false];
+    }
+
+    const toRank = (card) => (card.number === 1 ? 14 : card.number);
+
+    // スリーカード: 3枚を残し、2枚交換
+    if (handStrength >= 300) {
+      const counts = cards.reduce((acc, card) => {
+        const rank = toRank(card);
+        acc[rank] = (acc[rank] || 0) + 1;
+        return acc;
+      }, {});
+      const threeRank = Object.keys(counts).find((rank) => counts[rank] === 3);
+      return cards.map((card) => toRank(card) !== parseInt(threeRank, 10));
+    }
+
+    // ツーペア: ペア2組を残し、1枚交換
+    if (handStrength >= 200) {
+      const counts = cards.reduce((acc, card) => {
+        const rank = toRank(card);
+        acc[rank] = (acc[rank] || 0) + 1;
+        return acc;
+      }, {});
+      const singleRank = Object.keys(counts).find((rank) => counts[rank] === 1);
+      return cards.map((card) => toRank(card) === parseInt(singleRank, 10));
+    }
+
+    // ワンペア: ペアを残し、3枚交換
+    if (handStrength >= 100) {
+      const counts = cards.reduce((acc, card) => {
+        const rank = toRank(card);
+        acc[rank] = (acc[rank] || 0) + 1;
+        return acc;
+      }, {});
+      const pairRank = Object.keys(counts).find((rank) => counts[rank] === 2);
+      return cards.map((card) => toRank(card) !== parseInt(pairRank, 10));
+    }
+
+    // 上記以外（ハイカードやドローを狙う手）
+    // とりあえず一番強いカード1枚を残して4枚交換する戦略
+    const ranks = cards.map(toRank);
+    const maxRank = Math.max(...ranks);
+    let kept = false;
+    return cards.map((card) => {
+      if (toRank(card) === maxRank && !kept) {
+        kept = true;
+        return false; // 交換しない
+      }
+      return true; // 交換する
+    });
+  }
+
+  // =================================================================
+  // ▼▼▼ 変更可能なメイン関数 ▼▼▼
+  // =================================================================
+
   /**
    * ラウンド開始時に行う処理
-   * このプログラムではラウンド開始時にレイズ宣言時に追加するポイントを設定する
-   * @param data
-   * @returns
+   * @param {object} data GameInfo
    */
   startRound(data) {
     this.round = data.currentRound;
     this.logger?.info(this.formattedLog('Round start.'));
 
-    // 各プレイヤーの情報をログに出力する
     Object.values(data.players).forEach((player) => {
       this.logger?.debug(
-        this.formattedLog(
-          `Round start. ${player.name} info. status: ${player.status}, point: ${player.point}`
-        )
+        this.formattedLog(`StartRound. ${player.name} info. status: ${player.status}, point: ${player.point}`)
       );
     });
-
-    this.betUnit = randomByNumber(300) + 200; // 1ターンごとに追加するポイント数（このプログラムでは1ターンごとに追加するポイント数を規定しておく。値は200〜500までの間のランダム値）
-    this.logger?.debug(this.formattedLog(`bet unit: ${this.betUnit}.`));
   }
 
   /**
-   * 場の最低賭けポイントに対して追加で賭けるポイントを決定する
-   * @param data
-   * @returns
+   * ベットするポイントを決定する
+   * @param {object} data GameInfo
+   * @returns {number} 追加で賭けるポイント数
    */
   decideBetPoint(data) {
+    const self = data.players[this.name];
+    if (!self) return -1; // 万が一自身が見つからなければドロップ
+
+    const myHandStrength = this.evaluateHand(self.round.cards);
     this.logger?.info(
-      this.formattedLog(
-        `Phase ${data.phase}. pot: ${data.pot}, minBetPoint: ${data.minBetPoint}`
-      )
+      this.formattedLog(`My hand: ${JSON.stringify(self.round.cards)}, Strength: ${myHandStrength.toFixed(2)}`)
     );
 
-    // 各プレイヤーの情報をログに出力する
-    Object.values(data.players).forEach((player) => {
-      this.logger?.debug(
-        this.formattedLog(
-          `${player.name} info. point: ${player.point}, betPoint: ${player.round.betPoint}`
-        )
-      );
-    });
+    const diff = data.minBetPoint - (self.round.betPoint ?? 0); // コールに必要な額
+    const stack = self.point - diff; // コールした後に自由に使えるポイント
 
-    // ドロップ宣言をするかを決める（このプログラムでは最低賭けポイントが初期ポイントの半分を超えていたらドロップする）
-    if (data.minBetPoint > data.initialPoint / 2) return -1;
-
-    const self = data.players[this.name]; // 自身のデータ
-    const diff = data.minBetPoint - (self?.round.betPoint ?? 0); // 現在の最低賭けポイントと既に賭けたポイントとの差額
-    this.logger?.info(
-      this.formattedLog(
-        `my cards: ${JSON.stringify(self?.round.cards)}, diff: ${diff}`
-      )
-    );
-
-    const point = self?.point ?? 0; // 所持ポイント
-    const stack = point - diff; // 自由に使用できるポイント
-    const canRaise = stack > 0; // 自由に使用できるポイントが1以上あればレイズが宣言できる
-
-    if (canRaise) {
-      // レイズが宣言できる場合
-      if (data.phase === 'bet-1') {
-        // 1回目のベットフェーズ
-        // このプログラムでは1回目のベットフェーズで、誰も賭けていなければベットを行う
-        if (!data.minBetPoint) return this.betUnit;
-      } else if (data.phase === 'bet-2') {
-        // 2回目のベットフェーズ
-        // このプログラムでは2回目のベットフェーズで、初期ポイントの1/10以上の値が賭けられていなければレイズを宣言する
-        if (data.minBetPoint < data.initialPoint / 10) return this.betUnit; // stackがbetUnit賭けポイントを追加する単位より大きければレイズ、小さければオール・インとなる（このプログラムではレイズを宣言する時betPoint分のポイントを追加する）
+    // 強い手 (ツーペア以上) の場合
+    if (myHandStrength >= 200) {
+      // 誰もベットしていないなら、ポットの半分くらいをベット
+      if (data.minBetPoint === 0) {
+        return Math.floor(data.pot * 0.5);
       }
+      // 誰かがベットしているなら、強気にレイズ
+      // レイズ額は最低ベット額の2倍程度
+      const raiseAmount = data.minBetPoint * 2;
+      return Math.min(stack, raiseAmount); // 所持ポイントを超えないように
     }
 
-    // レイズが宣言できない時 チェック/コール or オール・イン
-    const declareAllIn = randomByNumber(1000) < 1; // オール・インを宣言するか（このプログラムでは1/1000の確率でオール・インを宣言する）
-    return declareAllIn ? stack : 0; // オール・インまたはコール
+    // 中くらいの手 (ワンペア) の場合
+    if (myHandStrength >= 100) {
+      // 相手のベット額が大きすぎる (ポットの半分以上) ならドロップ
+      if (data.minBetPoint > data.pot * 0.5) {
+        return -1;
+      }
+      // それ以外はコールに留める
+      return 0;
+    }
+
+    // 弱い手 (ハイカード) の場合
+    // 誰もベットしていなければチェック
+    if (data.minBetPoint === 0) {
+      return 0;
+    }
+    // 誰かがベットしていて、コール額が少額 (ポットの10%未満) なら運試しでコール
+    if (diff < data.pot * 0.1) {
+      return 0;
+    }
+    // それ以外は潔くドロップ
+    return -1;
   }
 
   /**
    * 交換する手札を選択する
-   * @param data
-   * @returns
+   * @param {object} data GameInfo
+   * @returns {Array<boolean>}
    */
   drawCard(data) {
-    const self = data.players[this.name]; // 自身のデータ
+    const self = data.players[this.name];
     const cards = self?.round.cards ?? [];
+    const myHandStrength = this.evaluateHand(cards);
+
+    const drawDecision = this.decideDraw(cards, myHandStrength);
+
     this.logger?.info(
       this.formattedLog(
-        `phase: ${data.phase}. my cards: ${JSON.stringify(cards)}`
+        `Phase: ${data.phase}. My hand strength: ${myHandStrength.toFixed(2)}. Draw decision: ${JSON.stringify(
+          drawDecision
+        )}`
       )
     );
 
-    return [
-      randomByNumber(2) < 1,
-      randomByNumber(2) < 1,
-      randomByNumber(2) < 1,
-      randomByNumber(2) < 1,
-      randomByNumber(2) < 1,
-    ];
+    return drawDecision;
   }
 
   /**
    * ラウンド終了時に行う処理
-   * @param data
-   * @returns
+   * @param {object} data GameInfo
    */
   endRound(data) {
-    this.logger?.info(
-      this.formattedLog(
-        `${data.currentRound}>: Round end. winner: ${data.winner}`
-      )
-    );
-
-    // 各プレイヤーの情報をログに出力する
-    Object.values(data.players).forEach((player) => {
-      this.logger?.debug(
-        `<Round: ${data.currentRound}>: Round end. ${
-          player.name
-        } info. status: ${player.status}, point: ${
-          player.point
-        }}, cards: ${JSON.stringify(player.round.cards)}, hand: ${
-          player.round.hand
-        }`
-      );
-    });
+    this.logger?.info(this.formattedLog(`Round end. winner: ${data.winner}`));
 
     if (data.winner === this.name) {
       this.win += 1;
-      this.logger?.debug(this.formattedLog(`Win count: ${this.win}`));
+      this.logger?.info(this.formattedLog(`I won! Total wins: ${this.win}`));
     }
   }
 
-  /** ***************************************************************
-   * ラウンド開始時の処理
-   * ※startRound内を変更し、基本的にこの関数は変更しないでください。
-   *
-   * @param data
-   * @returns
-   * ***************************************************************
-   */
+  // =================================================================
+  // ▼▼▼ 変更禁止の呼び出し用関数 ▼▼▼
+  // =================================================================
+
   start(data) {
     this.startRound(data);
   }
 
-  /** ***************************************************************
-   * ベットフェーズの処理
-   * ※decideBetPoint内を変更し、基本的にこの関数は変更しないでください。
-   * 返却値の値によって、宣言するコールが変わります。
-   * x = 追加で賭けるポイント
-   *
-   * x = 0: チェック/コール（賭けポイントを追加しません / コールの場合それまでの賭けポイントの差額は支払います）
-   * x > 0 and x <= 所持ポイント: レイズ（場の最低賭けポイントに更にポイントを追加します）
-   * x < x: ドロップ（本ラウンドで賭けたポイントを放棄し、本ラウンドを棄権します）
-   * x > 所持ポイント: オール・イン
-   *
-   * @param data
-   * @returns
-   * ***************************************************************
-   */
   bet(data) {
     return this.decideBetPoint(data);
   }
 
-  /** ***************************************************************
-   * 交換フェーズの処理
-   * ※drawCard内を変更し、基本的にこの関数は変更しないでください。
-   *
-   * 交換するカードの意思表示をbooleanの配列で行います。
-   * true: 交換する
-   * false: 交換しない、
-   *
-   * ex.)
-   * 手札: []
-   * 2枚目と5枚目を交換する場合は [false, true, false, false, true] というデータを返却します。
-   *
-   * @param data
-   * @returns
-   * ***************************************************************
-   */
   draw(data) {
     return this.drawCard(data);
   }
 
-  /** ***************************************************************
-   * ラウンド終了時の処理
-   * ※endRound内を変更し、基本的にこの関数は変更しないでください。
-   *
-   * @param data
-   * @returns
-   * ***************************************************************
-   */
   end(data) {
     this.endRound(data);
   }
 
-  /** ***************************************************************
-   * テスト確認用の関数
-   * ***************************************************************
-   */
   test() {
     return {
       id: this.id,
       name: this.name,
       round: this.round,
-      betUnit: this.betUnit,
-      win: this.win,
+      win: this.win
     };
   }
 }
