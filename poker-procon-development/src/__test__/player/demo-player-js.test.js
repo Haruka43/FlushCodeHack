@@ -3,7 +3,7 @@ import Players from '@/services/players';
 const PlayerTestGameData = {
   currentRound: 1,
   phase: 'start',
-  order: ['Player1', 'Player2', 'Player3', 'Player4'],
+  order: ['Player1', 'Player2', 'Player3', 'team2'],
   pot: 0,
   minBetPoint: 0,
   players: {
@@ -16,8 +16,8 @@ const PlayerTestGameData = {
         first: 0,
         second: 0,
         action: 'bet',
-        cards: [],
-      },
+        cards: []
+      }
     },
     Player2: {
       name: 'Player2',
@@ -28,8 +28,8 @@ const PlayerTestGameData = {
         first: 0,
         second: 0,
         action: 'bet',
-        cards: [],
-      },
+        cards: []
+      }
     },
     Player3: {
       name: 'Player3',
@@ -40,59 +40,53 @@ const PlayerTestGameData = {
         first: 0,
         second: 0,
         action: 'bet',
-        cards: [],
-      },
+        cards: []
+      }
     },
-    Player4: {
-      name: 'Player4',
-      status: 'out',
-      point: 0,
-      round: {
-        betPoint: 0,
-        first: 0,
-        second: 0,
-        action: null,
-        cards: [],
-      },
-    },
+    team2: {
+      name: 'team2',
+      status: 'active',
+      point: 20000,
+      round: { betPoint: 0, first: 0, second: 0, action: null, cards: [] }
+    }
   },
   totalRound: 100,
   initialPoint: 20000,
-  fee: 200,
+  fee: 200
 };
 
 const cards = [
   {
     suit: 'Clubs',
-    number: 1,
+    number: 1
   },
   {
     suit: 'Diamonds',
-    number: 7,
+    number: 7
   },
   {
     suit: 'Spades',
-    number: 6,
+    number: 6
   },
   {
     suit: 'Spades',
-    number: 9,
+    number: 9
   },
   {
     suit: 'Clubs',
-    number: 8,
-  },
+    number: 8
+  }
 ];
 
 describe('/demo-player-js service', () => {
-  const player = new Players.DemoPlayer4('1', 'Player4');
+  const player = new Players.team2('1', 'team2');
 
   test('start function', () => {
     player.start(PlayerTestGameData);
     const result = player.test();
 
     expect(result.id).toBe('1');
-    expect(result.name).toBe('Player4');
+    expect(result.name).toBe('team2');
     expect(result.round).toBe(1);
     expect(result.betUnit).toBeGreaterThanOrEqual(0);
     expect(result.win).toBe(0);
@@ -105,14 +99,14 @@ describe('/demo-player-js service', () => {
         phase: 'bet-1',
         players: {
           ...PlayerTestGameData.players,
-          Player4: {
-            ...PlayerTestGameData.players.Player4,
+          team2: {
+            ...PlayerTestGameData.players.team2,
             round: {
-              ...PlayerTestGameData.players.Player4?.round,
-              cards,
-            },
-          },
-        },
+              ...PlayerTestGameData.players.team2?.round,
+              cards
+            }
+          }
+        }
       });
 
       expect(typeof result).toBe('number');
@@ -124,14 +118,14 @@ describe('/demo-player-js service', () => {
         phase: 'bet-2',
         players: {
           ...PlayerTestGameData.players,
-          Player4: {
-            ...PlayerTestGameData.players.Player4,
+          team2: {
+            ...PlayerTestGameData.players.team2,
             round: {
-              ...PlayerTestGameData.players.Player4?.round,
-              cards,
-            },
-          },
-        },
+              ...PlayerTestGameData.players.team2?.round,
+              cards
+            }
+          }
+        }
       });
 
       expect(typeof result).toBe('number');
@@ -145,14 +139,14 @@ describe('/demo-player-js service', () => {
         phase: 'draw-1',
         players: {
           ...PlayerTestGameData.players,
-          Player4: {
-            ...PlayerTestGameData.players.Player4,
+          team2: {
+            ...PlayerTestGameData.players.team2,
             round: {
-              ...PlayerTestGameData.players.Player4?.round,
-              cards,
-            },
-          },
-        },
+              ...PlayerTestGameData.players.team2?.round,
+              cards
+            }
+          }
+        }
       });
 
       expect(result).toHaveLength(5);
@@ -169,14 +163,14 @@ describe('/demo-player-js service', () => {
         phase: 'draw-2',
         players: {
           ...PlayerTestGameData.players,
-          Player4: {
-            ...PlayerTestGameData.players.Player4,
+          team2: {
+            ...PlayerTestGameData.players.team2,
             round: {
-              ...PlayerTestGameData.players.Player4?.round,
-              cards,
-            },
-          },
-        },
+              ...PlayerTestGameData.players.team2?.round,
+              cards
+            }
+          }
+        }
       });
 
       expect(result).toHaveLength(5);
@@ -194,15 +188,15 @@ describe('/demo-player-js service', () => {
       phase: 'finished',
       players: {
         ...PlayerTestGameData.players,
-        Player4: {
-          ...PlayerTestGameData.players.Player4,
+        team2: {
+          ...PlayerTestGameData.players.team2,
           round: {
-            ...PlayerTestGameData.players.Player4?.round,
-            cards,
-          },
-        },
+            ...PlayerTestGameData.players.team2?.round,
+            cards
+          }
+        }
       },
-      winner: 'Player4',
+      winner: 'team2'
     });
     const result = player.test();
     expect(result.win).toBe(1);
